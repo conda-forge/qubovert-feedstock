@@ -10,7 +10,6 @@ source:
   sha256: fae18be6be59df70cb04c985f0c9491804e6fa5ef3798e0dbffd2d6357af2e58
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
@@ -21,6 +20,7 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - setuptools
   run:
     - python >=3.6
     - numpy
@@ -32,6 +32,8 @@ test:
     - pip check
   requires:
     - pip
+    - python -c "from qubovert import boolean_var"
+    - python -c "from qubovert.sim import _canneal"
 
 about:
   home: https://github.com/jtiosue/qubovert
