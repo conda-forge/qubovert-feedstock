@@ -10,21 +10,18 @@ source:
   sha256: fae18be6be59df70cb04c985f0c9491804e6fa5ef3798e0dbffd2d6357af2e58
 
 build:
-  skip: True  # [py<310]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
 
 requirements:
   build:
-    - python
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
   host:
-    - python
+    - python >=3.6
     - pip
     - setuptools
   run:
-    - python
+    - python >=3.6
     - numpy
 
 test:
