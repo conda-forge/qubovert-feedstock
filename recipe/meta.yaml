@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qubovert-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/qubovert-{{ version }}.tar.gz
   sha256: fae18be6be59df70cb04c985f0c9491804e6fa5ef3798e0dbffd2d6357af2e58
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 3
 
 requirements:
   build:
